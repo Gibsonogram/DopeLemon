@@ -1,0 +1,51 @@
+--- NOTES ---
+
+Layers in 2D, for 3D top-down sensibility:
+We split sprites into layers...
+
+1. Ground
+2. Walk in front of objs
+3. Collision (on same plane)
+
+3.5 PLAYER
+
+4. Walk behind objs
+5. Decoration
+
+
+
+
+--- STEPS/PROJECT COMPONENTS --- 
+Documenting the major components and steps taken for this project.
+
+1. Setting up and animating player character: 
+    - Used a sprite sheet containing anims for up,down,left,right, idle and walking.
+Sliced these sheets to fit character size and assigned the sprites to playerInput system.
+    - Used playerMovement script function to assign variables for input system movement, 
+ used blend 2D nodes in animator to transition between states.
+
+
+2. Player camera setup:
+    - Cinemachine is a package, this hijacks the main camera and makes camera setup incredibly easy. 
+This makes it all UI/component changes rather than code. Set it to 'follow' the player.
+    - Applied a polygonal bounding box to a cinemachine 'confiner' component which has all 
+the stopping and damping options you'd want...
+
+VSCODE ALT CHANGES TAB, while ctrl spaces fwd-back ????
+
+
+3. Assigned a tilemap, tilepalette, and tilesets:
+    - This system in Unity is very powerful. Created a layer for ground, walk-in-front, player, walk-behind, etc.
+This means creating a tilepalette for some set of tiles, then creating a layer and painting those in the scene.
+    - Once assigned, multiple layers can be drawn and deleted individually. This makes change/iteration very fast 
+(if assigned correctly)
+    - Create a tile-atlas to compress tilesets, this significantly reduces draw calls and improves performance... 
+This may reduce screen tearing too.
+
+
+##### TO RESEARCH
+Rule Tiling -> A system so that you do not need to place all tiles yourself, 
+it draws in the correct/preset tiles when painting.
+#####
+
+
