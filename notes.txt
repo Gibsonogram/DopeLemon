@@ -42,10 +42,23 @@ This means creating a tilepalette for some set of tiles, then creating a layer a
     - Create a tile-atlas to compress tilesets, this significantly reduces draw calls and improves performance... 
 This may reduce screen tearing too.
 
+4. UI system:
+    - I am using Unity's Canvas system, which is robust and allows for creating grids for UI elements.
+The menu constructed is 4 tabs with associated pages. The tabs use an image (just an imported sprite) with a 
+textmeshpro object inside of it.
+    - A script attached to the tab parent object cycles through the tabs to set one active and the others inactive.
+These tabs have an event trigger component which listens for PointerDown, and when heard, activates the given tab and its 
+associated page.
+
 
 ##### TO RESEARCH
 Rule Tiling -> A system so that you do not need to place all tiles yourself, 
 it draws in the correct/preset tiles when painting.
+
+Shaders... It would be good to know some basic shader maths and algorithms.
+Where do people find custom shaders, how are they implemented in Unity...
 #####
+
+
 
 
