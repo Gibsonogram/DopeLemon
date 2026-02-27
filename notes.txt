@@ -51,9 +51,21 @@ These tabs have an event trigger component which listens for PointerDown, and wh
 associated page.
 
 
+5. Sound design notes:
+After a bit of research it looks like the answer to sound, for me, will be to use Unity's built-in tools
+until my second game where I will transition to making things with REAPER. REAPER is a lightweight DAW 
+that sounds like it doesn't bog down dev time. 
+
+6. Basic save system:
+
+
 ##### TO RESEARCH
 Rule Tiling -> A system so that you do not need to place all tiles yourself, 
 it draws in the correct/preset tiles when painting.
+
+Are save systems generally encoded in some way ??? How is this done?
+Like they are not just JSON right, because that would mean anyone 
+could input values and have a 100% save file...
 
 Shaders... It would be good to know some basic shader maths and algorithms.
 Where do people find custom shaders, how are they implemented in Unity...
