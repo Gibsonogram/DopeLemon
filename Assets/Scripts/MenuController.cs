@@ -14,7 +14,14 @@ public class MenuController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            // ensure menu can't open in other situtations
+            if (!menuCanvas.activeSelf && PauseController.isPaused)
+            {
+                return;
+            }
+
             menuCanvas.SetActive(!menuCanvas.activeSelf);
+            PauseController.setPause(menuCanvas.activeSelf);
         }
     }
 }
