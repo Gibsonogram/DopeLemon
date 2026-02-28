@@ -57,15 +57,24 @@ until my second game where I will transition to making things with REAPER. REAPE
 that sounds like it doesn't bog down dev time. 
 
 6. Basic save system:
+    - File is stored on disk at some specified location in json, txt or an encoded format. This file
+is just a set of states of given variables, like player.position and current level, etc.
+    - Unity has a method to reach this location on disk, a savegame fxn writes there, a loadgame
+fxn retrieves info from there and sets those values in the game...
+
+7. Getting sound in the game:
+    - All sounds in this tutorial project come from some library or outside source.
+    - Sfx is managed via a singleton, which is set up to allow easy input from anywhere in the project.
+The singleton references a dictionary, where sounds are stored in lists, if more than 1 entry per list,
+then a random sound is chosen from that list. This system handles all sfx. The user adds sfx with a 
+single line in any other scipt.
+    - We have a very similar process in place for music management.
+    - Also discovered "pixabay" a site where you can get royalty-free sfx, pictures, music, etc. for games
 
 
 ##### TO RESEARCH
 Rule Tiling -> A system so that you do not need to place all tiles yourself, 
 it draws in the correct/preset tiles when painting.
-
-Are save systems generally encoded in some way ??? How is this done?
-Like they are not just JSON right, because that would mean anyone 
-could input values and have a 100% save file...
 
 Shaders... It would be good to know some basic shader maths and algorithms.
 Where do people find custom shaders, how are they implemented in Unity...
