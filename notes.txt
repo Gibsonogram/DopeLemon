@@ -72,12 +72,31 @@ single line in any other scipt.
     - Also discovered "pixabay" a site where you can get royalty-free sfx, pictures, music, etc. for games
 
 
+8. Scriptable Objects:
+    - I was using classes/tables to define data objs in p8, in Unity, the best way to replicate this, in terms
+of performance and design is to create "scriptable objects". This is the Unity way of changing:
+runtime objects -> in-editor assets
+    - Critical for Unity dev: Once the scriptable object is created, I can tweak it's info IN UNITY, rather than in-code.
+    - This is a system I want to use for my rule-based BlockyBandit game. This is exactly what 
+the tile-based, input-driven simulation will be using.
+"Think of them as editable, reusable rule assets your simulation reads when it runs a step."
+
+9. Full object workflow:
+-> Gridded (scene-snapping OR grid+Tilemap) scene.
+-> Folder storing prefab for actor types.
+-> Each prefab references a scriptable object for attributes.
+-> Drag and drop prefabs into scene.
+Basically instant iteration/testing of puzzles and levels...
+
+
 ##### TO RESEARCH
 Rule Tiling -> A system so that you do not need to place all tiles yourself, 
 it draws in the correct/preset tiles when painting.
 
 Shaders... It would be good to know some basic shader maths and algorithms.
-Where do people find custom shaders, how are they implemented in Unity...
+Where do people find custom shaders, how are they implemented in Unity...?
+
+Interfaces ?
 #####
 
 
