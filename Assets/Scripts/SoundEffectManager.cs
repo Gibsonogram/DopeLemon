@@ -6,6 +6,7 @@ public class SoundEffectManager : MonoBehaviour
     private static SoundEffectManager Instance;
 
     private static AudioSource audioSource;
+    private static AudioSource randomPitchAudioSource;
     private static SoundEffectLibrary soundEffectLibrary;
 
     [SerializeField] private Slider sfxSlider;
@@ -15,7 +16,9 @@ public class SoundEffectManager : MonoBehaviour
         if(Instance==null)
         {
             Instance=this;
-            audioSource = GetComponent<AudioSource>();
+            AudioSource[] audioSources = GetComponents<AudioSource>();
+            audioSource = audioSources[0];
+            randomPitchAudioSource = audioSources[1];
             soundEffectLibrary = GetComponent<SoundEffectLibrary>();
             DontDestroyOnLoad(gameObject);
         }
@@ -23,12 +26,17 @@ public class SoundEffectManager : MonoBehaviour
         {Destroy(gameObject);}
     }
 
-    public static void Play(string soundName)
+    public static void Play(string soundName, bool randomPitch=false)
     {
         AudioClip audioClip = soundEffectLibrary.GetRandomClip(soundName);
 
         if (audioClip != null)
         {
+            if (randomPitch)
+            {
+                randomPitchAudioSource.pitch = Random.Range(1f, 1.5f);
+                randomPitchAudioSource.PlayOneShot(audioClip);
+            }
             audioSource.PlayOneShot(audioClip);
         }
     }
@@ -36,6 +44,7 @@ public class SoundEffectManager : MonoBehaviour
     public static void SetVolume(float vol)
     {
         audioSource.volume = vol;
+        randomPitchAudioSource.volume = vol;
     }
 
     public void OnValueChanged()
