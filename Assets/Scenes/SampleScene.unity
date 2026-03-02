@@ -3964,6 +3964,7 @@ GameObject:
   - component: {fileID: 959264090}
   - component: {fileID: 959264089}
   - component: {fileID: 959264093}
+  - component: {fileID: 959264094}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -4068,6 +4069,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   menuCanvas: {fileID: 28319510}
+--- !u!114 &959264094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959264088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f7eb8f469099544aa2b5a931b9823a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  canvasGroup: {fileID: 874915456}
+  fadeDur: 0.5
 --- !u!1 &980129194
 GameObject:
   m_ObjectHideFlags: 0
