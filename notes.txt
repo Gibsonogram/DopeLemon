@@ -76,10 +76,19 @@ single line in any other scipt.
     - I was using classes/tables to define data objs in p8, in Unity, the best way to replicate this, in terms
 of performance and design is to create "scriptable objects". This is the Unity way of changing:
 runtime objects -> in-editor assets
-    - Critical for Unity dev: Once the scriptable object is created, I can tweak it's info IN UNITY, rather than in-code.
+    - Critical for Unity dev: Once the scriptable object is created, I can tweak its info IN UNITY, rather than in-code.
     - This is a system I want to use for my rule-based BlockyBandit game. This is exactly what 
 the tile-based, input-driven simulation will be using.
 "Think of them as editable, reusable rule assets your simulation reads when it runs a step."
+
+9. Scene transitions:
+    - This is a way to change player position via a boundary. We use a "waypoint" object which we can set wherever
+we want, to act as a trigger. Once crossed, we switch player position and corresponding camera bound.
+    - Fade transition: 
+There is a UI-panel obj that has component canvasGroup on it. This has "alpha" param. We use this to fade between 0-1
+In a dedicated FadeIn and FadeOut fxns inside a FadeController singleton. This way, we can call our FadeController.FadeIn or Out
+from anywhere.  
+
 
 9. One-to-many animation system:
     - Using a "sprite-library" component, an entity's entire sprite set can be saved out with each state
@@ -95,6 +104,13 @@ BB. Full object workflow:
 -> Each prefab references a scriptable object for attributes.
 -> Drag and drop prefabs into scene.
 Basically instant iteration/testing of puzzles and levels...
+
+BB. Level runner workflow:
+Instead of many scenes, a better way, is one of the following:
+Prefab for each level -> loaded in via some scripting
+Level Scriptable Object -> Contains all data
+Either way, the goal is to create levels in tilemap fast, with drag and drop actors, 
+but save and load all this without the need for 50 scenes.
 
 
 ##### TO RESEARCH
