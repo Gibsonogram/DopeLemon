@@ -81,7 +81,15 @@ runtime objects -> in-editor assets
 the tile-based, input-driven simulation will be using.
 "Think of them as editable, reusable rule assets your simulation reads when it runs a step."
 
-9. Full object workflow:
+9. One-to-many animation system:
+    - Using a "sprite-library" component, an entity's entire sprite set can be saved out with each state
+and those states' sprite sets. By giving an entity a "sprite-resolver" component AND ensuring the animation for that sprite
+refers to the sprite-library presets you made, NOT the sprites themselves, the sprite library can be switched out ON THE FLY.
+    - Kurtsgesagt, if a sprite library is set up with the same mappings and animation timings as another, then I can switch
+them out with one another as needed. Testing NPC designs with full anim, is as simple as switching between libraries...
+
+
+BB. Full object workflow:
 -> Gridded (scene-snapping OR grid+Tilemap) scene.
 -> Folder storing prefab for actor types.
 -> Each prefab references a scriptable object for attributes.

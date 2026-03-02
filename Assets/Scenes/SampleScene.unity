@@ -1853,10 +1853,12 @@ GameObject:
   - component: {fileID: 607138501}
   - component: {fileID: 607138500}
   - component: {fileID: 607138502}
+  - component: {fileID: 607138508}
   - component: {fileID: 607138503}
   - component: {fileID: 607138504}
   - component: {fileID: 607138505}
   - component: {fileID: 607138506}
+  - component: {fileID: 607138507}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1913,7 +1915,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4723107735738678597, guid: 23ed2395dbfc47b4cbcfce8b01415a57, type: 3}
+  m_Sprite: {fileID: -982904232830982447, guid: 3c59b99a3f614a3448ca3f191f5dc446, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2141,6 +2143,36 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9864747, y: 0.75113213}
   m_EdgeRadius: 0
+--- !u!114 &607138507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607138499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrary
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 7b31d01aa4b370d44ac0ee379c71497b, type: 3}
+--- !u!114 &607138508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607138499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteResolver
+  m_CategoryHash: 1.8625731e-11
+  m_labelHash: 3.941804e-21
+  m_SpriteKey: 0
+  m_SpriteHash: 171575919
 --- !u!1 &614509437
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,6 +3205,37 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &735362668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 735362669}
+  m_Layer: 0
+  m_Name: NPC_OldMan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &735362669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735362668}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.94199, y: -0.47696, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &761730387
 GameObject:
   m_ObjectHideFlags: 0
@@ -10451,3 +10514,4 @@ SceneRoots:
   - {fileID: 959264092}
   - {fileID: 286869494}
   - {fileID: 173008414}
+  - {fileID: 735362669}
